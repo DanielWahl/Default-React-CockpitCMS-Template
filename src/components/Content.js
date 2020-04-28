@@ -11,7 +11,7 @@ const grid = {
 	4: 'four-fourths',
 };
 
-export default class Footer extends React.Component {
+export default class Content extends React.Component {
 
 	_renderContent() {
 		let {data} = this.props;
@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
 		let gridColumns = grid[content.length];
 
 		return (
-			<div className={`page-components grid ${gridColumns}`}>
+			<div className={`page-components content grid ${gridColumns}`}>
 				{content && content.map((column, i) => {
 						const col_settings = column.settings;
 						const col_children = column.children || [];

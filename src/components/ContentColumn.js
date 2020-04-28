@@ -22,19 +22,20 @@ const defaultComponents = {
 	addcollection: Collection,
 }
 
-export default class Footer extends React.Component {
+export default class ContentColumn extends React.Component {
 
 	render() {
 		let {children} = this.props;
 
 		//console.log(content);
 		return (
-			<div className="content">
+			<div className="frame">
 				{children
 					&& children.map((component, j) => {
 						const comp_name 	= component.component;
 						const comp_settings = component.settings;
 						const comp_children = component.children || [];
+						const comp_columns 	= component.columns || [];
 
 						console.log(component)
 
@@ -49,6 +50,7 @@ export default class Footer extends React.Component {
 								name={comp_name}
 								settings={comp_settings}
 								children={comp_children}
+								columns={comp_columns}
 								key={`component-${j}`}
 							/>
 						)
