@@ -1,0 +1,30 @@
+/***********************************
+ *              HEADER             *
+ ***********************************/
+
+header#mainHeader
+    width: 100vw
+    max-width: 100%
+    height: calc(#{$navHeight} + 2rem)
+    background: $darkBase no-repeat center
+    //background-position: center
+    min-height: $navHeight //80vh
+
+    nav.fixed ~ .content
+        padding-top: calc(#{$navHeight} + 5rem)
+
+
+
+    &.small
+        min-height: $navHeight
+        border-radius: 0
+        background: $darkBase
+
+    .logo
+        height: $navHeight
+        width: 70px
+        //background: url("../images/logo.png") no-repeat
+        background-size: $navHeight 70px
+        float: left
+        border-radius: 25px //calc(#{$navHeight} / 2)
+

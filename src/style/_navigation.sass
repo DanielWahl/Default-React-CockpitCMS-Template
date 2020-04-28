@@ -1,0 +1,212 @@
+/***********************************
+ *            NAVIGATION           *
+ ***********************************/
+
+nav
+    height: calc(#{$navHeight} + 2rem)
+    width: 100vw
+    max-width: 100%
+    background: $navBackground
+    z-index: 100
+    user-select: none
+    //padding: 1rem 0
+    //float: right
+
+    &.fixed
+        position: fixed
+
+        &.background
+            background: $darkBase
+
+    .content
+
+        aside.navContainer
+
+            @media screen and (max-width: $tablet)
+                width: $navHeight
+
+            input.mobileCheckbox, input.userOpenCheckbox
+                opacity: 0
+                cursor: pointer
+                -webkit-touch-callout: none
+                z-index: 2
+
+                position: absolute
+
+
+            input.mobileCheckbox
+                width: 50px
+                height: 42px
+                display: none
+                top: 1.8rem
+
+                @media screen and (max-width: $tablet)
+                    display: block
+
+
+
+            ul
+                height: $navHeight
+                width: auto
+
+                @media screen and (max-width: $tablet)
+                    display: none
+
+                li
+                    display: inline-block
+                    height: $navHeight
+                    cursor: pointer
+
+                    @media screen and (max-width: $tablet)
+                        width: 100%
+
+                    a.navLink, span.navLink
+                        display: inline-block
+                        height: $navHeight
+                        padding: 0 1.5rem
+                        color: $white
+                        line-height: $navHeight
+                        text-decoration: none
+                        font-size: 1.2rem
+
+                        @media screen and (max-width: $tablet)
+                            width: 100%
+
+                        &:hover
+                            background: $primaryHover
+                            color: white
+                            text-decoration: none
+
+                        &> i, &> svg
+                            vertical-align: sub
+
+
+
+                    &.user
+
+                        .userBox
+                            display: none
+                            transform: translateX(-50%)
+
+                            &::before
+                                content: "\A"
+                                border-style: solid
+                                border-width: 10px 15px 10px 0
+                                border-color: transparent white transparent transparent
+                                position: absolute
+                                left: 276px
+                                top: -15px
+                                transform: rotate(90deg)
+
+                            @media screen and (max-width: 1500px)
+                                right: 1rem
+                                transform: none
+
+                                &::before
+                                    right: calc((100vw - 1200px) / 1.6) //1rem
+                                    left: unset
+
+
+                            @media screen and (max-width: $content)
+                                right: 1rem
+                                transform: none
+
+                                &::before
+                                    right: 2.2rem
+
+                            @media screen and (max-width: $tablet)
+                                width: calc(100% - 2rem)
+                                margin: 0 auto
+
+
+
+
+                        input.userOpenCheckbox
+                            width: 85px
+                            height: $navHeight
+                            top: 1rem
+
+                            @media screen and (max-width: $tablet)
+                                top: unset
+                                width: 100%
+
+                            &:hover
+                                &~ span
+                                    background: $primaryHover
+                                    color: white
+                                    text-decoration: none
+
+                            &:checked
+                                &~ .userBox
+                                    display: block
+
+
+
+
+
+            span.mobileToggle
+                width: 32px
+                height: 4px
+                top: 0
+                position: absolute
+                background: $white
+                border-radius: 3px
+                z-index: 1
+                transform-origin: 4px 0
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease
+
+                margin-bottom: 5px
+                //margin-left: calc(100% - 4rem)
+
+                display: none
+                @media screen and (max-width: $tablet)
+                    display: block
+
+
+                &:first-of-type
+                    margin-top: 2.5rem
+                    transform-origin: 0% 0%
+
+
+                &:nth-of-type(2)
+                    margin-top: 3rem
+                    transform-origin: 0% 100%
+
+
+                &:nth-of-type(3)
+                    margin-top: 3.5rem
+
+
+
+
+            input.mobileCheckbox:checked
+                &~ span.mobileToggle
+                    opacity: 1
+                    transform: rotate(45deg) translate(0px, -6px)
+                    background: $white
+
+
+                &~ span.mobileToggle:nth-of-type(2)
+                    opacity: 0
+                    transform: rotate(0deg) scale(0.2, 0.2)
+
+
+                &~ span.mobileToggle:nth-of-type(3)
+                    transform: rotate(-45deg) translate(0, -1px)
+
+
+                &~ ul
+                    display: block
+                    height: auto
+                    width: 100%
+                    background: $primary
+                    top: 100px
+                    position: absolute
+                    left: 0
+                    z-index: 100
+                    border-bottom: 1px solid black
+                    //transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+
+                    li
+                        display: block
+

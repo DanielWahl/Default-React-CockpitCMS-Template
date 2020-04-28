@@ -1,0 +1,38 @@
+/***********************************
+ *             FOOTER              *
+ ***********************************/
+
+footer
+    width: 100%
+    min-height: $navHeight
+    background: black //$darkBase
+    color: $white
+
+    line-height: calc(#{$navHeight} - 2rem)
+    text-align: center
+
+    a
+        color: white
+        text-decoration: none
+
+        &:hover
+            text-decoration: underline
+
+    .goToTopButton
+        height: 50px
+        width: 50px
+        border-radius: 20px
+        background: $secondary
+        color: black
+        position: absolute
+        right: 4rem
+        cursor: pointer
+        line-height: 50px
+        transform: rotate(90deg)
+        font-size: 2rem
+        margin-top: -50px
+        margin-left: 100%
+        font-weight: 100
+
+        &:hover
+            background: darken($secondary, 25%)

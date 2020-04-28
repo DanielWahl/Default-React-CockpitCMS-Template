@@ -1,0 +1,83 @@
+/***********************************
+ *             BUTTONS             *
+ ***********************************/
+
+button, input[type="submit"]
+    outline: none
+    background: $verylightgrey
+    color: grey
+
+    border: 1px solid $secondary
+    border-radius: $borderRadius
+
+    padding: 1rem 1rem
+
+    text-transform: uppercase
+    font-size: 0.9rem
+
+    &.fullWidth
+        width: 100%
+
+    &:hover
+        background: $secondary
+        color: $white
+        border: 1px solid darken($secondary, 5%)
+        cursor: pointer
+
+    &.full
+        background: $secondary
+        color: $darkBase
+
+        &:hover
+            background: darken($secondary, 25%)
+            border: 1px solid darken($secondary, 25%)
+
+        &.primary
+            border: 1px solid $primary
+            background: $primary
+            color: white
+
+            &:hover
+                background: darken($primaryHover, 25%)
+                border: 1px solid darken($primaryHover, 25%)
+
+    &.empty
+        background: transparent
+        color: white
+
+        &:hover
+            background: darken($darkBase, 5%)
+            border: 1px solid darken($secondary, 25%)
+            color: white
+
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"]
+    font-family: 'Roboto', sans-serif
+    width: 100%
+    border: 1px solid $primary
+    border-radius: $borderRadius
+    background: transparent
+    padding: 1rem
+    margin: 0.75rem 0
+    font-size: 1rem
+    outline: none
+
+    &.white
+        color: white
+
+    &:hover
+        border: 1px solid $primaryHover
+
+    &:active, &:focus
+        border: 1px solid $secondary
+
+
+input[type="date"]
+
+    &:before
+        content: attr(placeholder) !important
+        color: #757575
+        margin-right: 0.5em
+
+    &:focus:before, &:valid:before
+        content: ""

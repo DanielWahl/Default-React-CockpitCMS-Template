@@ -1,0 +1,75 @@
+/***********************************
+ *               GRID              *
+ ***********************************/
+
+
+.grid
+    display: grid
+    grid-gap: $gridSpacing
+    align-content: center
+    justify-content: space-between
+
+    &.center
+        align-items: center
+
+    &.paddingTop
+        padding-top: 3rem
+
+    &.fraction-auto
+        grid-template-columns: 1fr auto
+
+    &.half-half
+        grid-template-columns: 1fr 1fr
+
+        @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr
+
+
+
+    &.three-thirds
+        grid-template-columns: 1fr 1fr 1fr
+
+        @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr
+
+
+
+    &.four-fourths
+        grid-template-columns: 1fr 1fr 1fr 1fr
+
+        @media screen and (max-width: $desktop)
+            grid-template-columns: 1fr 1fr
+
+
+        @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr
+
+
+
+    &.two-rows
+        grid-template-rows: 1fr 1fr
+
+
+    &.seventy-thirty
+        grid-template-columns: 2fr 1fr
+
+        @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr
+
+
+
+    &.thirty-seventy
+        grid-template-columns: 1fr 2fr
+
+        @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr
+
+
+
+
+
+.flex
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+
