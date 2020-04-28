@@ -364,6 +364,9 @@ nav .content aside.navContainer ul li a.navLink:hover, nav .content aside.navCon
 nav .content aside.navContainer ul li a.navLink > i, nav .content aside.navContainer ul li a.navLink > svg, nav .content aside.navContainer ul li span.navLink > i, nav .content aside.navContainer ul li span.navLink > svg {
   vertical-align: sub;
 }
+nav .content aside.navContainer ul li a.navLink.active, nav .content aside.navContainer ul li span.navLink.active {
+  text-decoration: underline;
+}
 nav .content aside.navContainer ul li.user .userBox {
   display: none;
   transform: translateX(-50%);

@@ -1,45 +1,83 @@
-const token = "0ea2897b224a0603ac1b0cf01a204b";
-const domain = "https://cockpit.portfolio.danielwahl.lu/api/";
+import Vars from './Vars';
 
 class Fetch {
 
-	constructor() {
-
-	}
-
-	static get token() {
-		return token;
-	}
-
-	static get domain() {
-		return domain;
-	}
-
 	async fetchSiteSettings() {
-		return await fetch(domain + 'singletons/get/site_settings', {
-			headers: { 'Cockpit-Token': token }
+		return await fetch(Vars.domain + 'api/singletons/get/site_settings', {
+			headers: { 'Cockpit-Token': Vars.token }
 		})
 			.then(res => res.json())
 			.then(res => {
-				console.log(res);
+				//console.log(res);
 				return res;
 			});
 	}
 
 	async fetchPages() {
-		return await fetch(domain + 'collections/get/pages', {
-			headers: { 'Cockpit-Token': token }
+		return await fetch(Vars.domain + 'api/collections/get/pages', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+			body: JSON.stringify({
+				filter: {published:true},
+			})
+		})
+			.then(res => res.json())
+			.then(res => {
+
+				let result = [];
+				res.entries.forEach(page => {
+					if(page.alias === '' || page.alias === null || page.alias === undefined) {
+						page.alias = page.name.toLowerCase();
+					}
+					if(page.alias === '/')
+						page.alias = '';
+					result.push(page);
+				});
+				/*console.log("------open PAGE------");
+				console.log(res.entries);
+				console.log(result);
+				console.log("------close PAGE------");*/
+				return result;
+			});
+	}
+
+	async fetchErrorPage() {
+		return await fetch(Vars.domain + 'api/collections/get/pages', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+			body: JSON.stringify({
+				filter: {alias:'404'},
+			})
 		})
 		.then(res => res.json())
 		.then(res => {
-			console.log(res.entries);
-			return res.entries;
+			return res.entries[0];
 		});
 	}
 
+
 	async fetchSubPages() {
-		return await fetch(domain + 'collections/get/subpages', {
-			headers: { 'Cockpit-Token': token }
+		return await fetch(Vars.domain + 'api/collections/get/subpages', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+			body: JSON.stringify({
+				filter: {published:true},
+			})
+		})
+			.then(res => res.json())
+			.then(res => {
+				//console.log(res.entries);
+				return res.entries;
+			});
+	}
+
+	async fetchProducts() {
+		return await fetch(Vars.domain + 'api/collections/get/products', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+			body: JSON.stringify({
+				filter: {published:true},
+			})
 		})
 			.then(res => res.json())
 			.then(res => {
@@ -49,4 +87,4 @@ class Fetch {
 	}
 }
 
-export default Fetch = new Fetch;
+export default Fetch = new Fetch();

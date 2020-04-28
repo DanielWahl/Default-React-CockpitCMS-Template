@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-import {Link} from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 
 export default class Footer extends Component {

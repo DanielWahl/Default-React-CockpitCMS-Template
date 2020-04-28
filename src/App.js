@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Page from './routes/Page';
 import "./style/style.css";
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
+	Redirect
 } from "react-router-dom";
 import Fetch from './helpers/Fetch';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -20,6 +21,8 @@ export default class App extends Component {
 			sitesettings: 	null,
 			pages: 			null,
 			subpages: 		null,
+			errorpage:		null,
+			products: 		null,
 		}
 	}
 
@@ -27,12 +30,16 @@ export default class App extends Component {
 		let sitesettings = await Fetch.fetchSiteSettings();
 		let pages 		 = await Fetch.fetchPages();
 		let subpages 	 = await Fetch.fetchSubPages();
+		let errorpage 	 = await Fetch.fetchErrorPage();
+		let products	 = await Fetch.fetchProducts();
 
 		this.setState({
 			isLoading: false,
 			sitesettings: sitesettings,
 			pages: pages,
 			subpages: subpages,
+			errorpage: errorpage,
+			products: products,
 		});
 	}
 
@@ -40,16 +47,23 @@ export default class App extends Component {
 		let allPages = this.state.pages;
 		let siteSettings = this.state.sitesettings;
 		return this.state.pages.map((page, i) => {
+
+			if(page.alias === '404') {
+				return (null);
+			}
+
 			return (
-				<Route exact path={"/" + page.alias} key={"route-"+i}>
+				<Route exact path={"/" + page.alias} key={"route-" + i}>
 					<Page {...this.props} data={page} allPages={allPages} siteSettings={siteSettings}/>
 				</Route>
 			);
+
 		});
+
 	}
 
     render() {
-		let {isLoading, sitesettings, pages, subpages} = this.state;
+		let {isLoading, errorpage, pages, sitesettings} = this.state;
 
 		if(isLoading) {
 			return (
@@ -69,6 +83,11 @@ export default class App extends Component {
             <Router>
 				<Switch>
 					{this._renderPages()}
+					{errorpage !== null && (
+						<Route>
+							<Page {...this.props} data={errorpage} allPages={pages} siteSettings={sitesettings}/>
+						</Route>
+					)}
 				</Switch>
             </Router>
     	);

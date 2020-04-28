@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 
 import {Link} from "react-router-dom";
+//import {NavLink as Link} from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
-import Person from '@material-ui/icons/Person';
 
 export default class Navigation extends Component {
 
@@ -27,12 +27,13 @@ export default class Navigation extends Component {
 			if(page.alias !== '404') {
 				return (
 					<li key={"nav-li-" + i}>
-						<Scrollchor to={"/" + page.alias} className="navLink">
+						<Link to={"/" + page.alias} className="navLink">
 							{page.name}
-						</Scrollchor>
+						</Link>
 					</li>
 				)
 			}
+
 		});
 	}
 

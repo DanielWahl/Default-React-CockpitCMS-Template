@@ -1,23 +1,17 @@
 import React, {Component} from "react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Content from '../components/Content';
 
 export default class Page extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		let {data} = this.props;
-		console.log(data);
 
 		return (
 			<div className="global">
 				<Header {...this.props} />
-				<main>
-
-				</main>
+				<Content {...this.props} />
 				<Footer {...this.props} />
 			</div>
 		);
