@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import 'react-app-polyfill/ie11';
 import Page from './routes/Page';
 import "./style/style.css";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-	Redirect
+    Route
 } from "react-router-dom";
 import Fetch from './helpers/Fetch';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from 'react-loader-spinner';
+import Vars from './helpers/Vars';
 
 export default class App extends Component {
 
@@ -23,6 +24,7 @@ export default class App extends Component {
 			subpages: 		null,
 			errorpage:		null,
 			products: 		null,
+			slides:			null,
 		}
 	}
 
@@ -33,6 +35,11 @@ export default class App extends Component {
 		let errorpage 	 = await Fetch.fetchErrorPage();
 		let products	 = await Fetch.fetchProducts();
 
+		let slides 		 = null;
+		if(Vars.hasSlider) {
+			slides = await Fetch.fetchSlides();
+		}
+
 		this.setState({
 			isLoading: false,
 			sitesettings: sitesettings,
@@ -40,12 +47,14 @@ export default class App extends Component {
 			subpages: subpages,
 			errorpage: errorpage,
 			products: products,
+			slides: slides,
 		});
 	}
 
 	_renderPages() {
 		let allPages = this.state.pages;
 		let siteSettings = this.state.sitesettings;
+		let slides = this.state.slides;
 		return this.state.pages.map((page, i) => {
 
 			if(page.alias === '404') {
@@ -54,7 +63,7 @@ export default class App extends Component {
 
 			return (
 				<Route exact path={"/" + page.alias} key={"route-" + i}>
-					<Page {...this.props} data={page} allPages={allPages} siteSettings={siteSettings}/>
+					<Page {...this.props} data={page} allPages={allPages} siteSettings={siteSettings} slides={slides} />
 				</Route>
 			);
 
@@ -85,7 +94,7 @@ export default class App extends Component {
 					{this._renderPages()}
 					{errorpage !== null && (
 						<Route>
-							<Page {...this.props} data={errorpage} allPages={pages} siteSettings={sitesettings}/>
+							<Page {...this.props} data={errorpage} allPages={pages} siteSettings={sitesettings} />
 						</Route>
 					)}
 				</Switch>

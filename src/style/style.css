@@ -258,12 +258,46 @@ input[type=date]:focus:before, input[type=date]:valid:before {
 }
 
 /***********************************
+ * *             FOOTER              *
+ * ***********************************/
+.flexslider {
+  width: 100vw;
+  height: calc(100vh - (70px + 2rem));
+  min-height: 50vw;
+  max-height: calc(100vh - (70px + 2rem));
+  object-fit: cover;
+  position: relative;
+}
+.flexslider .awssld {
+  height: calc(100vh - (70px + 2rem));
+  width: 100%;
+}
+.flexslider .awssld .awssld__bullets {
+  bottom: 0;
+}
+.flexslider .awssld .aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 7px;
+  --organic-arrow-border-radius: 30px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #538bd5;
+  --control-button-width: 17%;
+  --control-button-height: 80%;
+  --control-button-background: transparent;
+  --control-bullet-color: #62a4fa;
+  --control-bullet-active-color: #538bd5;
+  --loader-bar-color: #851515;
+  --loader-bar-height: 6px;
+}
+
+/***********************************
  * *              HEADER             *
  * ***********************************/
 header#mainHeader {
   width: 100vw;
   max-width: 100%;
-  height: calc(70px + 2rem);
+  height: auto;
   background: #303030 no-repeat center;
   min-height: 70px;
 }
@@ -286,63 +320,62 @@ header#mainHeader .logo {
 /***********************************
  * *            NAVIGATION           *
  * ***********************************/
-nav {
+nav#mainNav {
   height: calc(70px + 2rem);
   width: 100vw;
   max-width: 100%;
-  background: transparent;
   z-index: 100;
   user-select: none;
 }
-nav.fixed {
+nav#mainNav.fixed {
   position: fixed;
 }
-nav.fixed.background {
+nav#mainNav.fixed.background {
   background: #303030;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer {
+  nav#mainNav .content aside.navContainer {
     width: 70px;
   }
 }
-nav .content aside.navContainer input.mobileCheckbox, nav .content aside.navContainer input.userOpenCheckbox {
+nav#mainNav .content aside.navContainer input.mobileCheckbox, nav#mainNav .content aside.navContainer input.userOpenCheckbox {
   opacity: 0;
   cursor: pointer;
   -webkit-touch-callout: none;
   z-index: 2;
   position: absolute;
 }
-nav .content aside.navContainer input.mobileCheckbox {
+nav#mainNav .content aside.navContainer input.mobileCheckbox {
   width: 50px;
   height: 42px;
   display: none;
   top: 1.8rem;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer input.mobileCheckbox {
+  nav#mainNav .content aside.navContainer input.mobileCheckbox {
     display: block;
   }
 }
-nav .content aside.navContainer ul {
+nav#mainNav .content aside.navContainer ul {
   height: 70px;
   width: auto;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer ul {
+  nav#mainNav .content aside.navContainer ul {
     display: none;
   }
 }
-nav .content aside.navContainer ul li {
+nav#mainNav .content aside.navContainer ul li {
   display: inline-block;
   height: 70px;
   cursor: pointer;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer ul li {
+  nav#mainNav .content aside.navContainer ul li {
     width: 100%;
   }
 }
-nav .content aside.navContainer ul li a.navLink, nav .content aside.navContainer ul li span.navLink {
+nav#mainNav .content aside.navContainer ul li a.navLink, nav#mainNav .content aside.navContainer ul li span.navLink {
   display: inline-block;
   height: 70px;
   padding: 0 1.5rem;
@@ -352,26 +385,26 @@ nav .content aside.navContainer ul li a.navLink, nav .content aside.navContainer
   font-size: 1.2rem;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer ul li a.navLink, nav .content aside.navContainer ul li span.navLink {
+  nav#mainNav .content aside.navContainer ul li a.navLink, nav#mainNav .content aside.navContainer ul li span.navLink {
     width: 100%;
   }
 }
-nav .content aside.navContainer ul li a.navLink:hover, nav .content aside.navContainer ul li span.navLink:hover {
+nav#mainNav .content aside.navContainer ul li a.navLink:hover, nav#mainNav .content aside.navContainer ul li span.navLink:hover {
   background: #6BBCB1;
   color: white;
   text-decoration: none;
 }
-nav .content aside.navContainer ul li a.navLink > i, nav .content aside.navContainer ul li a.navLink > svg, nav .content aside.navContainer ul li span.navLink > i, nav .content aside.navContainer ul li span.navLink > svg {
+nav#mainNav .content aside.navContainer ul li a.navLink > i, nav#mainNav .content aside.navContainer ul li a.navLink > svg, nav#mainNav .content aside.navContainer ul li span.navLink > i, nav#mainNav .content aside.navContainer ul li span.navLink > svg {
   vertical-align: sub;
 }
-nav .content aside.navContainer ul li a.navLink.active, nav .content aside.navContainer ul li span.navLink.active {
+nav#mainNav .content aside.navContainer ul li a.navLink.active, nav#mainNav .content aside.navContainer ul li span.navLink.active {
   text-decoration: underline;
 }
-nav .content aside.navContainer ul li.user .userBox {
+nav#mainNav .content aside.navContainer ul li.user .userBox {
   display: none;
   transform: translateX(-50%);
 }
-nav .content aside.navContainer ul li.user .userBox::before {
+nav#mainNav .content aside.navContainer ul li.user .userBox::before {
   content: "\a";
   border-style: solid;
   border-width: 10px 15px 10px 0;
@@ -382,50 +415,50 @@ nav .content aside.navContainer ul li.user .userBox::before {
   transform: rotate(90deg);
 }
 @media screen and (max-width: 1500px) {
-  nav .content aside.navContainer ul li.user .userBox {
+  nav#mainNav .content aside.navContainer ul li.user .userBox {
     right: 1rem;
     transform: none;
   }
-  nav .content aside.navContainer ul li.user .userBox::before {
+  nav#mainNav .content aside.navContainer ul li.user .userBox::before {
     right: calc((100vw - 1200px) / 1.6);
     left: unset;
   }
 }
 @media screen and (max-width: 1220px) {
-  nav .content aside.navContainer ul li.user .userBox {
+  nav#mainNav .content aside.navContainer ul li.user .userBox {
     right: 1rem;
     transform: none;
   }
-  nav .content aside.navContainer ul li.user .userBox::before {
+  nav#mainNav .content aside.navContainer ul li.user .userBox::before {
     right: 2.2rem;
   }
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer ul li.user .userBox {
+  nav#mainNav .content aside.navContainer ul li.user .userBox {
     width: calc(100% - 2rem);
     margin: 0 auto;
   }
 }
-nav .content aside.navContainer ul li.user input.userOpenCheckbox {
+nav#mainNav .content aside.navContainer ul li.user input.userOpenCheckbox {
   width: 85px;
   height: 70px;
   top: 1rem;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer ul li.user input.userOpenCheckbox {
+  nav#mainNav .content aside.navContainer ul li.user input.userOpenCheckbox {
     top: unset;
     width: 100%;
   }
 }
-nav .content aside.navContainer ul li.user input.userOpenCheckbox:hover ~ span {
+nav#mainNav .content aside.navContainer ul li.user input.userOpenCheckbox:hover ~ span {
   background: #6BBCB1;
   color: white;
   text-decoration: none;
 }
-nav .content aside.navContainer ul li.user input.userOpenCheckbox:checked ~ .userBox {
+nav#mainNav .content aside.navContainer ul li.user input.userOpenCheckbox:checked ~ .userBox {
   display: block;
 }
-nav .content aside.navContainer span.mobileToggle {
+nav#mainNav .content aside.navContainer span.mobileToggle {
   width: 32px;
   height: 4px;
   top: 0;
@@ -439,34 +472,34 @@ nav .content aside.navContainer span.mobileToggle {
   display: none;
 }
 @media screen and (max-width: 920px) {
-  nav .content aside.navContainer span.mobileToggle {
+  nav#mainNav .content aside.navContainer span.mobileToggle {
     display: block;
   }
 }
-nav .content aside.navContainer span.mobileToggle:first-of-type {
+nav#mainNav .content aside.navContainer span.mobileToggle:first-of-type {
   margin-top: 2.5rem;
   transform-origin: 0% 0%;
 }
-nav .content aside.navContainer span.mobileToggle:nth-of-type(2) {
+nav#mainNav .content aside.navContainer span.mobileToggle:nth-of-type(2) {
   margin-top: 3rem;
   transform-origin: 0% 100%;
 }
-nav .content aside.navContainer span.mobileToggle:nth-of-type(3) {
+nav#mainNav .content aside.navContainer span.mobileToggle:nth-of-type(3) {
   margin-top: 3.5rem;
 }
-nav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle {
+nav#mainNav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle {
   opacity: 1;
   transform: rotate(45deg) translate(0px, -6px);
   background: white;
 }
-nav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle:nth-of-type(2) {
+nav#mainNav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle:nth-of-type(2) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
-nav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle:nth-of-type(3) {
+nav#mainNav .content aside.navContainer input.mobileCheckbox:checked ~ span.mobileToggle:nth-of-type(3) {
   transform: rotate(-45deg) translate(0, -1px);
 }
-nav .content aside.navContainer input.mobileCheckbox:checked ~ ul {
+nav#mainNav .content aside.navContainer input.mobileCheckbox:checked ~ ul {
   display: block;
   height: auto;
   width: 100%;
@@ -477,7 +510,7 @@ nav .content aside.navContainer input.mobileCheckbox:checked ~ ul {
   z-index: 100;
   border-bottom: 1px solid black;
 }
-nav .content aside.navContainer input.mobileCheckbox:checked ~ ul li {
+nav#mainNav .content aside.navContainer input.mobileCheckbox:checked ~ ul li {
   display: block;
 }
 

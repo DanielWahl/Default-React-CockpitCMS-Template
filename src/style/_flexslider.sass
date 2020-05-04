@@ -1,0 +1,37 @@
+/***********************************
+ *             FOOTER              *
+ ***********************************/
+
+.flexslider
+    $spacer: calc(#{$navHeight} + 2rem)
+    $height: calc(100vh - (#{$navHeight} + 2rem))
+    width: 100vw
+    height: $height
+    min-height: 50vw
+    max-height: $height //100vw
+    object-fit: cover
+    position: relative
+
+    .awssld
+        height: $height
+        width: 100%
+
+        .awssld__bullets
+            bottom: 0
+
+        .aws-btn
+            --slider-height-percentage: 60%
+            --slider-transition-duration: 700ms
+            --organic-arrow-thickness: 7px
+            --organic-arrow-border-radius: 30px
+            --organic-arrow-height: 40px
+            --organic-arrow-color: #538bd5
+            --control-button-width: 17%
+            --control-button-height: 80%
+            --control-button-background: transparent
+            --control-bullet-color: #62a4fa
+            --control-bullet-active-color: #538bd5
+            --loader-bar-color: #851515
+            --loader-bar-height: 6px
+
+

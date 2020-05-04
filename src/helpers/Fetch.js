@@ -81,7 +81,24 @@ class Fetch {
 		})
 			.then(res => res.json())
 			.then(res => {
-				console.log(res.entries);
+				//console.log(res.entries);
+				return res.entries;
+			});
+	}
+
+	async fetchSlides() {
+		return await fetch(Vars.domain + 'api/collections/get/slider', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+			body: JSON.stringify({
+				filter: {published:true},
+			})
+		})
+			.then(res => res.json())
+			.then(res => {
+				//console.log("-------Fetch Slides------");
+				//console.log(res);
+				//console.log("-------Fetch Slides------");
 				return res.entries;
 			});
 	}

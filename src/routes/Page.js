@@ -6,7 +6,7 @@ import Content from '../components/Content';
 export default class Page extends Component {
 
 	render() {
-		let {data} = this.props;
+		//let {data} = this.props;
 
 		return (
 			<div className="global">
