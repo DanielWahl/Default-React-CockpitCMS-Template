@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Vars from '../helpers/Vars';
 
 export default class Product extends Component {
 

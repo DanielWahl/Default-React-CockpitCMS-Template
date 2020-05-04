@@ -34,7 +34,7 @@ export default class FlexBox extends React.Component {
 					const comp_settings = component.settings;
 					const comp_children = component.children || [];
 
-					console.log(component)
+					//console.log(component)
 
 					if(defaultComponents[comp_name] === undefined) {
 						return null;

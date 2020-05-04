@@ -24,7 +24,6 @@ export default class Content extends React.Component {
 				{content && content.map((column, i) => {
 						const col_settings = column.settings;
 						const col_children = column.children || [];
-						//console.log(column);
 
 						return (
 							<ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`}/>

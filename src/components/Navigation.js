@@ -6,6 +6,54 @@ import Scrollchor from 'react-scrollchor';
 
 export default class Navigation extends Component {
 
+	constructor(props) {
+		super(props);
+
+		this.lastScrollTop = 0;
+		this.n = 0;
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll() {
+
+		let nav = document.getElementById("mainNav"); //.classList.add("background");
+		let headerHeight = document.getElementById("mainHeader").offsetHeight - 100;
+		let windowWidth = window.innerWidth;
+		let st = window.pageYOffset;
+		let isScrollUp = st < this.lastScrollTop;
+		this.lastScrollTop = st;
+
+		if(windowWidth > 780) {
+			if (isScrollUp) {
+				if (st < 70) {
+					nav.classList.remove("background");
+				}
+			} else {
+				if (st > headerHeight) {
+					nav.classList.add("background");
+				}
+			}
+		} else {
+			if(isScrollUp) {
+				if(st > 70) {
+					nav.classList.add("background");
+				} else {
+					nav.classList.remove("background");
+				}
+			} else {
+				nav.classList.remove("background");
+			}
+		}
+
+	}
+
 	renderLogo() {
 		if(this.props.isHome) {
 			return (
@@ -32,13 +80,15 @@ export default class Navigation extends Component {
 						</Link>
 					</li>
 				)
+			} else {
+				return null;
 			}
 
 		});
 	}
 
 	render() {
-		let {data, allPages} = this.props;
+		//let {data, allPages} = this.props;
 
 		return (
 			<nav className="" id="mainNav">

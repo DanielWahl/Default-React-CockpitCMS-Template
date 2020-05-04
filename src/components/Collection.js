@@ -13,6 +13,8 @@ export default class Collection extends Component {
 					collections.map((entry, i) => {
 						if(entry.link === 'products') {
 							return <Product data={entry} key={`product-${i}`} />
+						} else {
+							return null;
 						}
 					})
 				}

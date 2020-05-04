@@ -37,7 +37,7 @@ export default class ContentColumn extends React.Component {
 						const comp_children = component.children || [];
 						const comp_columns 	= component.columns || [];
 
-						console.log(component)
+						//console.log(component)
 
 						if(defaultComponents[comp_name] === undefined) {
 							return null;

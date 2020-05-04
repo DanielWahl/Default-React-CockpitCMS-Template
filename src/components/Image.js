@@ -9,7 +9,7 @@ export default class Image extends Component {
 
 		return (
 			<div className="component-image">
-				<img src={imageUrl} />
+				<img src={imageUrl} alt={settings.image.path}/>
 			</div>
 		);
 	}

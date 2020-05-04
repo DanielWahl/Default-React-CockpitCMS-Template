@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Navigation from "./Navigation.js";
 
 export default class PageBanner extends Component {
 
