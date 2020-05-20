@@ -24,13 +24,25 @@
         @media screen and (max-width: $tablet)
             grid-template-columns: 1fr
 
+            &.keepTwo
+                grid-template-columns: 1fr 1fr
+
 
 
     &.three-thirds
         grid-template-columns: 1fr 1fr 1fr
 
         @media screen and (max-width: $tablet)
+            grid-template-columns: 1fr 1fr
+
+            &.keepTwo
+                grid-template-columns: 1fr 1fr
+
+        @media screen and (max-width: $phone)
             grid-template-columns: 1fr
+            &.keepTwo
+                grid-template-columns: 1fr
+
 
 
 
@@ -72,4 +84,19 @@
     display: flex
     justify-content: flex-start
     flex-wrap: wrap
+
+    &.noWrap
+        flex-wrap: nowrap
+
+    &.fullWrap
+        div, a, p
+            width: 100%
+
+    &.spaceBetween
+        justify-content: space-between
+
+    &.mobileFullWrap
+        @media screen and (max-width: $phone)
+            div, a, p
+                width: 100%
 

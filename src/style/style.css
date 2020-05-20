@@ -130,12 +130,26 @@ a:hover {
   .grid.half-half {
     grid-template-columns: 1fr;
   }
+  .grid.half-half.keepTwo {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .grid.three-thirds {
   grid-template-columns: 1fr 1fr 1fr;
 }
 @media screen and (max-width: 920px) {
   .grid.three-thirds {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid.three-thirds.keepTwo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 720px) {
+  .grid.three-thirds {
+    grid-template-columns: 1fr;
+  }
+  .grid.three-thirds.keepTwo {
     grid-template-columns: 1fr;
   }
 }
@@ -176,6 +190,20 @@ a:hover {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+.flex.noWrap {
+  flex-wrap: nowrap;
+}
+.flex.fullWrap div, .flex.fullWrap a, .flex.fullWrap p {
+  width: 100%;
+}
+.flex.spaceBetween {
+  justify-content: space-between;
+}
+@media screen and (max-width: 720px) {
+  .flex.mobileFullWrap div, .flex.mobileFullWrap a, .flex.mobileFullWrap p {
+    width: 100%;
+  }
 }
 
 /***********************************
