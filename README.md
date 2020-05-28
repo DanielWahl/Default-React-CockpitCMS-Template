@@ -10,8 +10,10 @@ I would appreciate every mention and comment.
 
 Check out my portfolio: https://danielwahl.lu
 
+A more precise documentation will follow.
 
-## Available Scripts
+## Start npm
+### Available Scripts
 
 In the project directory, you can run:
 
