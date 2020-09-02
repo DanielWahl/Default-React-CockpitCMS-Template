@@ -1,14 +1,12 @@
-import React, {Component} from "react";
+import React from 'react';
 
-export default class Button extends Component {
+const Button = ({data}) => {
 
-	render() {
-
-		return (
-			<div className="component-text">
-				<div dangerouslySetInnerHTML={{__html: this.props.data.text}} />
-			</div>
-		);
-	}
-
+	return (
+		<div className="component-text">
+			<div dangerouslySetInnerHTML={{__html: data.text}}/>
+		</div>
+	);
 }
+
+export default  Button;

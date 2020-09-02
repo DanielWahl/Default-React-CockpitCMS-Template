@@ -1,25 +1,19 @@
-import React, {Component} from "react";
+import React, { useState, useEffect} from "react";
 import Vars from '../helpers/Vars';
 import {Link} from 'react-router-dom'
 
-export default class News extends Component {
+const News = (props) => {
 
-	constructor(props) {
-		super(props);
 
-		this.state = {
-			isLoading: true,
-			fetchedData: null,
-		}
-	}
+	const [isLoading, setIsLoading] = useState(true);
 
-	async componentDidMount() {
-		//let fetchedData = await Fetch.getProductCategory(this.props.data.display);
-		this.setState({isLoading: false}); //, fetchedData: fetchedData});
-	}
 
-	_renderAll() {
-		return this.props.news.map((article, index) => {
+	useEffect(() => {
+		setIsLoading(false); //, fetchedData: fetchedData});
+	}, []);
+
+	const renderAll = () => {
+		return props.news.map((article, index) => {
 			let description;
 			if (article.description.length > 500) {
 				description = article.description.substring(0, 500);
@@ -49,13 +43,11 @@ export default class News extends Component {
 		})
 	}
 
-	_renderThree() {
-
-
+	const renderThree = () => {
 
 		return (
 			<div className="grid half-half">
-				{ this.props.news.map((article, index) => {
+				{ props.news.map((article, index) => {
 					if (index < 2) {
 						let description;
 						if(article.description.length > 200) {
@@ -84,41 +76,39 @@ export default class News extends Component {
 							</div>
 						)
 					}
+					return null;
 				})
 				}
 			</div>
 		)
 	}
 
-	render() {
-		let {settings} = this.props;
-		//console.log(settings);
 
-		//console.log(this.props.news);
-
-		if(this.state.isLoading) {
-			return (
-				<main>
-					<div className="content">
-						Is Loading...
-					</div>
-				</main>
-			);
-		}
-
-		switch (settings.select) {
-			case "showAll":
-				return this._renderAll();
-			case "showThree":
-				return this._renderThree();
-			default:
-				return this._renderAll();
-			//case "select":
-			//	return this._renderById();
-		}
+	let {settings} = props;
 
 
-
+	if(isLoading) {
+		return (
+			<main>
+				<div className="content">
+					Is Loading...
+				</div>
+			</main>
+		);
 	}
 
+	switch (settings.select) {
+		case "showAll":
+			return renderAll();
+		case "showThree":
+			return renderThree();
+		default:
+			return renderAll();
+		//case "select":
+		//	return renderById();
+	}
+
+
 }
+
+export default News;

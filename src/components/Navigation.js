@@ -1,34 +1,21 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
 
 import {Link} from "react-router-dom";
-//import {NavLink as Link} from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 
-export default class Navigation extends Component {
+const Navigation = (props) => {
 
-	constructor(props) {
-		super(props);
 
-		this.lastScrollTop = 0;
-		this.n = 0;
-	}
+	const [lastScrollTop, setLastScrollTop] = useState(0);
 
-	componentDidMount() {
-		window.addEventListener('scroll', this.handleScroll);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll);
-	}
-
-	handleScroll() {
+	const handleScroll = () => {
 
 		let nav = document.getElementById("mainNav"); //.classList.add("background");
 		let headerHeight = document.getElementById("mainHeader").offsetHeight - 100;
 		let windowWidth = window.innerWidth;
 		let st = window.pageYOffset;
-		let isScrollUp = st < this.lastScrollTop;
-		this.lastScrollTop = st;
+		let isScrollUp = st < lastScrollTop;
+		setLastScrollTop(st);
 
 		if(windowWidth > 780) {
 			if (isScrollUp) {
@@ -54,8 +41,15 @@ export default class Navigation extends Component {
 
 	}
 
-	renderLogo() {
-		if(this.props.isHome) {
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll());
+		return () => {
+			window.removeEventListener('scroll', handleScroll());
+		};
+	}, []);
+
+	const renderLogo = () => {
+		if(props.isHome) {
 			return (
 				<Scrollchor to="#mainHeader" className="navLink">
 					<div className="logo"> </div>
@@ -70,8 +64,8 @@ export default class Navigation extends Component {
 		}
 	}
 
-	renderNavigation() {
-		return this.props.allPages.map((page, i) => {
+	const renderNavigation = () => {
+		return props.allPages.map((page, i) => {
 			if(page.alias !== '404') {
 				return (
 					<li key={"nav-li-" + i}>
@@ -87,28 +81,27 @@ export default class Navigation extends Component {
 		});
 	}
 
-	render() {
-		//let {data, allPages} = this.props;
 
-		return (
-			<nav className="" id="mainNav">
-				<div className="content grid fraction-auto">
-					<aside className="logoContainer">
-						{this.renderLogo()}
-					</aside>
+	return (
+		<nav className="" id="mainNav">
+			<div className="content grid fraction-auto">
+				<aside className="logoContainer">
+					{renderLogo()}
+				</aside>
 
-					<aside className="navContainer">
-						<input type="checkbox" className="mobileCheckbox"/>
-						<span className="mobileToggle"> </span>
-						<span className="mobileToggle"> </span>
-						<span className="mobileToggle"> </span>
-						<ul>
-							{this.renderNavigation()}
-						</ul>
-					</aside>
-				</div>
-			</nav>
-		);
-	}
+				<aside className="navContainer">
+					<input type="checkbox" className="mobileCheckbox"/>
+					<span className="mobileToggle"> </span>
+					<span className="mobileToggle"> </span>
+					<span className="mobileToggle"> </span>
+					<ul>
+						{renderNavigation()}
+					</ul>
+				</aside>
+			</div>
+		</nav>
+	);
+
 
 }
+export default Navigation;

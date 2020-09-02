@@ -1,26 +1,22 @@
-import React, {Component} from "react";
-
+import React from 'react';
 import Scrollchor from 'react-scrollchor';
 
-export default class Footer extends Component {
+const Footer = ({siteSettings}) => {
 
-	render() {
-		let {siteSettings} = this.props;
-		return (
-			<footer>
+	return (
+		<footer>
 
-				<div className="content">
+			<div className="content">
 
-					<Scrollchor to="#mainHeader" className="navLink">
-						<div className="goToTopButton">
-							<span>&#10094;</span>
-						</div>
-					</Scrollchor>
+				<Scrollchor to="#mainHeader" className="navLink">
+					<div className="goToTopButton">
+						<span>&#10094;</span>
+					</div>
+				</Scrollchor>
 
-					<div dangerouslySetInnerHTML={{__html: siteSettings.copyright}} />
-				</div>
-			</footer>
-		);
-	}
-
+				<div dangerouslySetInnerHTML={{__html: siteSettings.copyright}}/>
+			</div>
+		</footer>
+	);
 }
+export default Footer;

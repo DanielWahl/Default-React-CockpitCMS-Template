@@ -1,25 +1,23 @@
-import React, {Component} from "react";
+import React from 'react';
 import Product from './Product';
 
-export default class Collection extends Component {
+const Collection = (props) => {
+	let {settings} = props;
+	let collections = settings.collection;
 
-	render() {
-		let {settings} = this.props;
-		let collections = settings.collection;
-
-		return (
-			<div className="component-addcollection">
-				{collections &&
-					collections.map((entry, i) => {
-						if(entry.link === 'products') {
-							return <Product data={entry} key={`product-${i}`} />
-						} else {
-							return null;
-						}
-					})
+	return (
+		<div className="component-addcollection">
+			{collections &&
+			collections.map((entry, i) => {
+				if (entry.link === 'products') {
+					return <Product data={entry} key={`product-${i}`}/>;
+				} else {
+					return null;
 				}
-			</div>
-		);
-	}
-
+			})
+			}
+		</div>
+	);
 }
+
+export default Collection;

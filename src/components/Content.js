@@ -11,15 +11,13 @@ const grid = {
 	4: 'four-fourths',
 };
 
-export default class Content extends React.Component {
+const Content = ({data}) => {
 
-	_renderContent() {
-		let {data} = this.props;
+	let content = data.content;
+	let gridColumns = grid[content.length];
 
-		let content = data.content;
-		let gridColumns = grid[content.length];
-
-		return (
+	return (
+		<main>
 			<div className={`page-components content grid ${gridColumns}`}>
 				{content && content.map((column, i) => {
 						const col_settings = column.settings;
@@ -32,16 +30,9 @@ export default class Content extends React.Component {
 					})
 				}
 			</div>
-		);
-	}
+		</main>
+	);
 
-	render() {
-
-		return (
-			<main>
-				{this._renderContent()}
-			</main>
-		);
-	}
 
 }
+export default Content;

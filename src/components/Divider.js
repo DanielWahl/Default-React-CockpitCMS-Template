@@ -1,14 +1,11 @@
-import React, {Component} from "react";
+import React from 'react';
 
-export default class Divider extends Component {
+const Divider = (props) => {
 
-	render() {
-
-		return (
-			<div className="component-text">
-				<div dangerouslySetInnerHTML={{__html: this.props.data.text}} />
-			</div>
-		);
-	}
-
+	return (
+		<div className="component-text">
+			<div dangerouslySetInnerHTML={{__html: props.data.text}}/>
+		</div>
+	);
 }
+export default Divider;

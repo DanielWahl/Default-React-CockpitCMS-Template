@@ -1,7 +1,5 @@
-import React from "react";
-
-
-import ContentColumn from "./ContentColumn";
+import React from 'react';
+import ContentColumn from './ContentColumn';
 
 const grid = {
 	0: '',
@@ -11,29 +9,24 @@ const grid = {
 	4: 'four-fourths',
 };
 
-export default class Grid extends React.Component {
+const Grid = ({columns}) => {
 
-	render() {
-		let {columns} = this.props;
+	let content = columns;
+	let gridColumns = grid[content.length];
 
-		let content = columns;
-		let gridColumns = grid[content.length];
+	return (
+		<div className={`page-components grid ${gridColumns}`}>
+			{content && content.map((column, i) => {
+				const col_settings = column.settings;
+				const col_children = column.children || [];
 
-		return (
-			<div className={`page-components grid ${gridColumns}`}>
-				{content && content.map((column, i) => {
-					const col_settings = column.settings;
-					const col_children = column.children || [];
-					//console.log(column);
+				return (
+					<ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`}/>
+				);
 
-					return (
-						<ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`}/>
-					);
-
-				})
-				}
-			</div>
-		);
-	}
-
+			})
+			}
+		</div>
+	);
 }
+export default Grid;

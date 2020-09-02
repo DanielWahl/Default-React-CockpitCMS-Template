@@ -1,13 +1,12 @@
-import React from "react";
-
-import Text from "./Text";
-import Image from "./Image";
-import Grid from "./Grid";
-import Divider from "./Divider";
-import Heading from "./Heading";
-import PageBanner from "./PageBanner";
-import Button from "./Button";
-import Collection from "./Collection";
+import React from 'react';
+import Text from './Text';
+import Image from './Image';
+import Grid from './Grid';
+import Divider from './Divider';
+import Heading from './Heading';
+import PageBanner from './PageBanner';
+import Button from './Button';
+import Collection from './Collection';
 
 const defaultComponents = {
 	heading: Heading,
@@ -20,42 +19,34 @@ const defaultComponents = {
 	addcollection: Collection,
 }
 
-export default class FlexBox extends React.Component {
+const FlexBox = ({children}) => {
 
-	render() {
-		let {children} = this.props;
+	return (
+		<div className="content flex">
+			{children
+			&& children.map((component, j) => {
+				const comp_name 	= component.component;
+				const comp_settings = component.settings;
+				const comp_children = component.children || [];
 
-		//console.log(content);
-		return (
-			<div className="content flex">
-				{children
-				&& children.map((component, j) => {
-					const comp_name 	= component.component;
-					const comp_settings = component.settings;
-					const comp_children = component.children || [];
-
-					//console.log(component)
-
-					if(defaultComponents[comp_name] === undefined) {
-						return null;
-					}
-
-					const NewComponent = defaultComponents[comp_name];
-
-					return (
-						<NewComponent
-							name={comp_name}
-							settings={comp_settings}
-							children={comp_children}
-							key={`component-${j}`}
-						/>
-					)
-				})
-
+				if (defaultComponents[comp_name] === undefined) {
+					return null;
 				}
-			</div>
-		);
-	}
 
+				const NewComponent = defaultComponents[comp_name];
 
+				return (
+					<NewComponent
+						name={comp_name}
+						settings={comp_settings}
+						children={comp_children}
+						key={`component-${j}`}
+					/>
+				);
+			})
+
+			}
+		</div>
+	);
 }
+export default FlexBox;

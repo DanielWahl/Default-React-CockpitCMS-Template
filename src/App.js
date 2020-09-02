@@ -58,7 +58,7 @@ export default class App extends Component {
 		return this.state.pages.map((page, i) => {
 
 			if(page.alias === '404') {
-				return (null);
+				return null;
 			}
 
 			return (
