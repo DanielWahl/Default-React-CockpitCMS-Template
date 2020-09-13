@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82872515-1958-4f25-8018-1e2ecda67819" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/Fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/Fetch.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,7 @@
       <workItem from="1593981672325" duration="170000" />
       <workItem from="1599033963572" duration="3929000" />
       <workItem from="1599814290615" duration="2315000" />
-      <workItem from="1599826847873" duration="4567000" />
+      <workItem from="1599826847873" duration="5845000" />
     </task>
     <servers />
   </component>
@@ -84,6 +77,10 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ts" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600027227646">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1600027227646" />
     <state x="365" y="98" key="CommitChangelistDialog2" timestamp="1600023043812">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

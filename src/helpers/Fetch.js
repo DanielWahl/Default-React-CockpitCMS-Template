@@ -1,31 +1,28 @@
 import Vars from './Vars';
+import axios from 'axios';
 
 class Fetch {
 
 	async fetchSiteSettings() {
-		return await fetch(Vars.domain + 'api/singletons/get/site_settings', {
+		return axios.get(Vars.domain + 'api/singletons/get/site_settings', {
 			headers: { 'Cockpit-Token': Vars.token }
 		})
-			.then(res => res.json())
 			.then(res => {
 				//console.log(res);
-				return res;
+				return res.data;
 			});
 	}
 
 	async fetchPages() {
-		return await fetch(Vars.domain + 'api/collections/get/pages', {
-			method: 'post',
+		return axios.get(Vars.domain + 'api/collections/get/pages', {
 			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
-			body: JSON.stringify({
-				filter: {published:true},
-			})
+			data: {
+				filter: { published:true },
+			}
 		})
-			.then(res => res.json())
 			.then(res => {
-
 				let result = [];
-				res.entries.forEach(page => {
+				res.data.entries.forEach(page => {
 					if(page.alias === '' || page.alias === null || page.alias === undefined) {
 						page.alias = page.name.toLowerCase();
 					}
@@ -38,68 +35,60 @@ class Fetch {
 				console.log(result);
 				console.log("------close PAGE------");*/
 				return result;
-			});
+			}).catch((err) => console.log(err));
 	}
 
 	async fetchErrorPage() {
-		return await fetch(Vars.domain + 'api/collections/get/pages', {
-			method: 'post',
+		return axios.get(Vars.domain + 'api/collections/get/pages', {
 			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
-			body: JSON.stringify({
-				filter: {alias:'404'},
-			})
+			data: {
+				filter: { alias:'404' },
+			}
 		})
-		.then(res => res.json())
 		.then(res => {
-			return res.entries[0];
+			return res.data?.entries[0];
 		});
 	}
 
 
 	async fetchSubPages() {
-		return await fetch(Vars.domain + 'api/collections/get/subpages', {
-			method: 'post',
+		return axios.get(Vars.domain + 'api/collections/get/subpages', {
 			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
-			body: JSON.stringify({
-				filter: {published:true},
-			})
+			data: {
+				filter: { published:true },
+			}
 		})
-			.then(res => res.json())
 			.then(res => {
 				//console.log(res.entries);
-				return res.entries;
+				return res.data?.entries;
 			});
 	}
 
 	async fetchProducts() {
-		return await fetch(Vars.domain + 'api/collections/get/products', {
-			method: 'post',
+		return axios.get(Vars.domain + 'api/collections/get/products', {
 			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
-			body: JSON.stringify({
-				filter: {published:true},
-			})
+			data: {
+				filter: { published:true },
+			}
 		})
-			.then(res => res.json())
 			.then(res => {
 				//console.log(res.entries);
-				return res.entries;
+				return res.data?.entries;
 			});
 	}
 
 	async fetchSlides() {
-		return await fetch(Vars.domain + 'api/collections/get/slider', {
-			method: 'post',
+		return axios.get(Vars.domain + 'api/collections/get/slider', {
 			headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
-			body: JSON.stringify({
-				filter: {published:true},
-			})
+			data: {
+				filter: { published:true },
+			}
 		})
-			.then(res => res.json())
 			.then(res => {
 				//console.log("-------Fetch Slides------");
 				//console.log(res);
 				//console.log("-------Fetch Slides------");
-				return res.entries;
+				return res.data?.entries;
 			});
 	}
 }

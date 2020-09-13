@@ -20,18 +20,18 @@ const App = (props:Props) => {
 	const [isLoading, setIsLoading] 		= useState(true);
 	const [siteSettings, setSiteSettings] 	= useState([]);
 	const [pages, setPages] 				= useState([]);
-	//const [subPages, setSubPages] 			= useState([]);
 	const [errorPage, setErrorPage] 		= useState([]);
-	//const [products, setProducts] 			= useState([]);
 	const [slides, setSlides] 				= useState([]);
+	//const [subPages, setSubPages] 		= useState([]);
+	//const [products, setProducts] 		= useState([]);
 
 	useEffect(() => {
 		const fetch = async () => {
 			let fetchedSiteSettings = await Fetch.fetchSiteSettings();
 			let fetchedPages:any 	= await Fetch.fetchPages();
-			let fetchedSubPages 	= await Fetch.fetchSubPages();
 			let fetchedErrorPage 	= await Fetch.fetchErrorPage();
-			let fetchedProducts 	= await Fetch.fetchProducts();
+			//let fetchedSubPages 	= await Fetch.fetchSubPages();
+			//let fetchedProducts 	= await Fetch.fetchProducts();
 
 			let fetchedSlides 		= null;
 			if (Vars.hasSlider) {
@@ -41,10 +41,10 @@ const App = (props:Props) => {
 			setIsLoading(false);
 			setSiteSettings(fetchedSiteSettings);
 			setPages(fetchedPages);
-			//setSubPages(fetchedSubPages);
 			setErrorPage(fetchedErrorPage);
-			//setProducts(fetchedProducts);
 			setSlides(fetchedSlides);
+			//setSubPages(fetchedSubPages);
+			//setProducts(fetchedProducts);
 		}
 		fetch().catch((err) => console.log(err));
 	}, []);
