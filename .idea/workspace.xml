@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82872515-1958-4f25-8018-1e2ecda67819" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Divider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Divider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FlexBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FlexBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Heading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Maps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageBanner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageBanner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Text.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +34,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/style" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/style" />
     </key>
   </component>
@@ -80,14 +71,23 @@
       <workItem from="1592639902690" duration="935000" />
       <workItem from="1593069652982" duration="1128000" />
       <workItem from="1593981672325" duration="170000" />
-      <workItem from="1599033963572" duration="2877000" />
+      <workItem from="1599033963572" duration="3929000" />
+      <workItem from="1599814290615" duration="2315000" />
+      <workItem from="1599826847873" duration="4567000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ts" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="365" y="98" key="CommitChangelistDialog2" timestamp="1600023043812">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="365" y="98" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600023043812" />
     <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1593071322311">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

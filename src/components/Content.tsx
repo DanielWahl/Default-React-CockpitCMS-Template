@@ -11,21 +11,27 @@ const grid = {
 	4: 'four-fourths',
 };
 
-const Content = ({data}) => {
+interface Props {
+	data?: any;
+	allPages?: any;
+	siteSettings?: any;
+	slides?: any;
+}
+
+const Content = ({data, allPages, siteSettings, slides}:Props) => {
 
 	let content = data.content;
-	let gridColumns = grid[content.length];
+	// @ts-ignore
+	let gridColumns = grid[content?.length];
 
 	return (
 		<main>
 			<div className={`page-components content grid ${gridColumns}`}>
-				{content && content.map((column, i) => {
+				{content && content.map((column:any, i:number) => {
 						const col_settings = column.settings;
 						const col_children = column.children || [];
-
-						return (
-							<ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`}/>
-						);
+						// @ts-ignore
+						return <ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`} />;
 
 					})
 				}

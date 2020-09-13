@@ -1,11 +1,18 @@
 import React from 'react';
+// @ts-ignore
 import Scrollchor from 'react-scrollchor';
 
-const Footer = ({siteSettings}) => {
+interface Props {
+	data?: any;
+	allPages?: any;
+	siteSettings?: any;
+	slides?: any;
+}
+
+const Footer = ({siteSettings}:Props) => {
 
 	return (
 		<footer>
-
 			<div className="content">
 
 				<Scrollchor to="#mainHeader" className="navLink">

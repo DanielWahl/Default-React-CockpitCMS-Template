@@ -1,52 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 
 import {Link} from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 
 const Navigation = (props) => {
 
-
 	const [lastScrollTop, setLastScrollTop] = useState(0);
 
-	const handleScroll = () => {
+	useCallback(() => {
+		const handleScroll = () => {
 
-		let nav = document.getElementById("mainNav"); //.classList.add("background");
-		let headerHeight = document.getElementById("mainHeader").offsetHeight - 100;
-		let windowWidth = window.innerWidth;
-		let st = window.pageYOffset;
-		let isScrollUp = st < lastScrollTop;
-		setLastScrollTop(st);
+			let nav = document.getElementById("mainNav"); //.classList.add("background");
+			let headerHeight = document.getElementById("mainHeader").offsetHeight - 100;
+			let windowWidth = window.innerWidth;
+			let st = window.pageYOffset;
+			let isScrollUp = st < lastScrollTop;
+			setLastScrollTop(st);
 
-		if(windowWidth > 780) {
-			if (isScrollUp) {
-				if (st < 70) {
-					nav.classList.remove("background");
+			if(windowWidth > 780) {
+				if (isScrollUp) {
+					if (st < 70) {
+						nav.classList.remove("background");
+					}
+				} else {
+					if (st > headerHeight) {
+						nav.classList.add("background");
+					}
 				}
 			} else {
-				if (st > headerHeight) {
-					nav.classList.add("background");
-				}
-			}
-		} else {
-			if(isScrollUp) {
-				if(st > 70) {
-					nav.classList.add("background");
+				if(isScrollUp) {
+					if(st > 70) {
+						nav.classList.add("background");
+					} else {
+						nav.classList.remove("background");
+					}
 				} else {
 					nav.classList.remove("background");
 				}
-			} else {
-				nav.classList.remove("background");
 			}
+
 		}
-
-	}
-
-	useEffect(() => {
 		window.addEventListener('scroll', handleScroll());
 		return () => {
 			window.removeEventListener('scroll', handleScroll());
 		};
-	}, []);
+	}, [lastScrollTop]);
 
 	const renderLogo = () => {
 		if(props.isHome) {
@@ -65,7 +63,7 @@ const Navigation = (props) => {
 	}
 
 	const renderNavigation = () => {
-		return props.allPages.map((page, i) => {
+		return props.allPages?.map((page, i) => {
 			if(page.alias !== '404') {
 				return (
 					<li key={"nav-li-" + i}>
