@@ -10,7 +10,8 @@ class Fetch {
 			.then(res => {
 				//console.log(res);
 				return res.data;
-			});
+			})
+			.catch((err) => console.log(err));
 	}
 
 	async fetchPages() {
@@ -35,7 +36,8 @@ class Fetch {
 				console.log(result);
 				console.log("------close PAGE------");*/
 				return result;
-			}).catch((err) => console.log(err));
+			})
+			.catch((err) => console.log(err));
 	}
 
 	async fetchErrorPage() {
@@ -45,9 +47,10 @@ class Fetch {
 				filter: { alias:'404' },
 			}
 		})
-		.then(res => {
-			return res.data?.entries[0];
-		});
+			.then(res => {
+				return res.data?.entries[0];
+			})
+			.catch((err) => console.log(err));
 	}
 
 
@@ -61,7 +64,8 @@ class Fetch {
 			.then(res => {
 				//console.log(res.entries);
 				return res.data?.entries;
-			});
+			})
+			.catch((err) => console.log(err));
 	}
 
 	async fetchProducts() {
@@ -74,7 +78,8 @@ class Fetch {
 			.then(res => {
 				//console.log(res.entries);
 				return res.data?.entries;
-			});
+			})
+			.catch((err) => console.log(err));
 	}
 
 	async fetchSlides() {
@@ -89,7 +94,8 @@ class Fetch {
 				//console.log(res);
 				//console.log("-------Fetch Slides------");
 				return res.data?.entries;
-			});
+			})
+			.catch((err) => console.log(err));
 	}
 }
 
