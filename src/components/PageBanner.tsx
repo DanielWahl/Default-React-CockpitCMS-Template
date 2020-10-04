@@ -1,6 +1,7 @@
 import React from 'react';
+import Props from "../types/singleComponents/NormalProps";
 
-const PageBanner = ({data}) => {
+const PageBanner = ({data}:Props) => {
 
 	return (
 		<div className="component-text">

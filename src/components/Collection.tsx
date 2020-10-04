@@ -1,14 +1,14 @@
 import React from 'react';
 import Product from './Product';
+import Props from "../types/singleComponents/NormalProps";
 
-const Collection = (props) => {
-	let {settings} = props;
+const Collection = ({settings}:Props) => {
 	let collections = settings.collection;
 
 	return (
 		<div className="component-addcollection">
 			{collections &&
-			collections.map((entry, i) => {
+			collections.map((entry:any, i:number) => {
 				if (entry.link === 'products') {
 					return <Product data={entry} key={`product-${i}`}/>;
 				} else {

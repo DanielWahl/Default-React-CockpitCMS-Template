@@ -1,8 +1,8 @@
 import React from 'react';
 import ContentColumn from './ContentColumn';
+import ContentComponentData from "../types/component/ContentComponentData";
 
-
-const PopupBox = (props) => {
+const PopupBox = (props:ContentComponentData) => {
 	let {children, settings} = props;
 
 	return (

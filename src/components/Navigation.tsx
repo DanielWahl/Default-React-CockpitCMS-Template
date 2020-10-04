@@ -1,17 +1,19 @@
 import React, { useState, useCallback } from "react";
-
 import {Link} from "react-router-dom";
+// @ts-ignore
 import Scrollchor from 'react-scrollchor';
+import PageEntry from '../types/page/PageEntry';
+import PageProps from '../types/page/PageProps';
 
-const Navigation = (props) => {
+const Navigation = (props:PageProps) => {
 
 	const [lastScrollTop, setLastScrollTop] = useState(0);
 
 	useCallback(() => {
-		const handleScroll = () => {
+		const handleScroll:any = () => {
 
 			let nav = document.getElementById("mainNav"); //.classList.add("background");
-			let headerHeight = document.getElementById("mainHeader").offsetHeight - 100;
+			let headerHeight = (document.getElementById("mainHeader") as HTMLElement).offsetHeight - 100 || 100;
 			let windowWidth = window.innerWidth;
 			let st = window.pageYOffset;
 			let isScrollUp = st < lastScrollTop;
@@ -20,22 +22,22 @@ const Navigation = (props) => {
 			if(windowWidth > 780) {
 				if (isScrollUp) {
 					if (st < 70) {
-						nav.classList.remove("background");
+						nav?.classList.remove("background");
 					}
 				} else {
 					if (st > headerHeight) {
-						nav.classList.add("background");
+						nav?.classList.add("background");
 					}
 				}
 			} else {
 				if(isScrollUp) {
 					if(st > 70) {
-						nav.classList.add("background");
+						nav?.classList.add("background");
 					} else {
-						nav.classList.remove("background");
+						nav?.classList.remove("background");
 					}
 				} else {
-					nav.classList.remove("background");
+					nav?.classList.remove("background");
 				}
 			}
 
@@ -63,7 +65,7 @@ const Navigation = (props) => {
 	}
 
 	const renderNavigation = () => {
-		return props.allPages?.map((page, i) => {
+		return props.allPages?.map((page:PageEntry, i:number) => {
 			if(page.alias !== '404') {
 				return (
 					<li key={"nav-li-" + i}>

@@ -1,7 +1,8 @@
 import React from 'react';
 import ContentColumn from './ContentColumn';
+import ContentComponentData from "../types/component/ContentComponentData";
 
-const grid = {
+const grid:any = {
 	0: '',
 	1: '',
 	2: 'half-half',
@@ -9,14 +10,12 @@ const grid = {
 	4: 'four-fourths',
 };
 
-const Grid = ({columns}) => {
-
-	let content = columns;
-	let gridColumns = grid[content.length];
+const Grid = ({columns}:ContentComponentData) => {
+	let gridColumns = grid[columns?.length || 0];
 
 	return (
 		<div className={`page-components grid ${gridColumns}`}>
-			{content && content.map((column, i) => {
+			{columns && columns.map((column:ContentComponentData, i:number) => {
 				const col_settings = column.settings;
 				const col_children = column.children || [];
 

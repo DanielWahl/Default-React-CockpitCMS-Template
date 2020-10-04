@@ -1,6 +1,4 @@
 import React from "react";
-
-
 import ContentColumn from "./ContentColumn";
 
 const grid = {

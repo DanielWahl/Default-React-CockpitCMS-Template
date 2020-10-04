@@ -1,6 +1,7 @@
 import React from 'react';
+import ContentComponentData from "../types/component/ContentComponentData";
 
-const Text = (props) => {
+const Text = (props:ContentComponentData) => {
 
 	return (
 		<div className="component-text">

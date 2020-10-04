@@ -1,8 +1,14 @@
 import React, { useState, useEffect} from "react";
 import Vars from '../helpers/Vars';
 import {Link} from 'react-router-dom'
+import ArticleData from "../types/singleComponents/ArticleData";
 
-const News = (props) => {
+interface Props {
+	news?:any;
+	settings: any;
+}
+
+const News = (props:Props) => {
 
 
 	const [isLoading, setIsLoading] = useState(true);
@@ -13,10 +19,10 @@ const News = (props) => {
 	}, []);
 
 	const renderAll = () => {
-		return props.news.map((article, index) => {
+		return props.news.map((article:ArticleData, index:number) => {
 			let description;
-			if (article.description.length > 500) {
-				description = article.description.substring(0, 500);
+			if (article.description?.length > 500) {
+				description = article.description?.substring(0, 500);
 				description += "...";
 			} else {
 				description = article.description;
@@ -29,7 +35,7 @@ const News = (props) => {
 				<div className="news" key={`news-${index}`}>
 					<Link to={article.slug}>
 						<div className="news_container">
-							<img src={Vars.domain + article.headerimage.path} alt={article.title}/>
+							<img src={Vars.domain + article.headerimage?.path} alt={article.title}/>
 							<div className="news_details">
 								<span className="date">{dateString}</span>
 								<h3>{article.title}</h3>
@@ -47,7 +53,7 @@ const News = (props) => {
 
 		return (
 			<div className="grid half-half">
-				{ props.news.map((article, index) => {
+				{ props.news.map((article:ArticleData, index:number) => {
 					if (index < 2) {
 						let description;
 						if(article.description.length > 200) {

@@ -3,7 +3,14 @@ import Navigation from './Navigation';
 import Carousel from './Carousel';
 import Vars from '../helpers/Vars';
 
-const Header = (props) => {
+interface Props {
+	data?: any;
+	allPages?: any;
+	siteSettings?: any;
+	slides?: any;
+}
+
+const Header = (props: Props) => {
 	let {slider} = props.data;
 	return (
 		<header id="mainHeader">

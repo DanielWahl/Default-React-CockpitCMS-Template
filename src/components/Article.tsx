@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Vars from '../helpers/Vars';
 import {Link} from 'react-router-dom'
+import Props from "../types/singleComponents/NormalProps";
 
-const Article = (props) => {
+const Article = (props:Props) => {
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [fetchedData, setFetchedData] = useState(null);
@@ -36,7 +37,7 @@ const Article = (props) => {
 					<Link to="/news"><button className="full round primary">&lt; Back</button></Link>
 
 					<div className="article_container">
-						<img src={Vars.domain + article.headerimage.path} alt={article.title} />
+						<img src={Vars.domain + article.headerimage?.path} alt={article.title} />
 						<div className="article_details">
 							<span className="date">{dateString}</span>
 							<h3>{article.title}</h3>

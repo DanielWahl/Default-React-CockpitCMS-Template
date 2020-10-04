@@ -97,6 +97,39 @@ class Fetch {
 			})
 			.catch((err) => console.log(err));
 	}
+
+	async fetchNews() {
+        return await fetch(Vars.domain + 'api/collections/get/news', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+            body: JSON.stringify({
+                filter: {published:true},
+                populate: 1,
+            })
+        })
+            .then(res => res.json())
+            .then(res => {
+                //console.log(res.entries);
+                return res.entries;
+            });
+    }
+
+    async getNews(id) {
+        return await fetch(Vars.domain + 'api/collections/get/news', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'Cockpit-Token': Vars.token },
+            body: JSON.stringify({
+                filter: {published:true, title: id},
+                populate: 1,
+            })
+        })
+            .then(res => res.json())
+            .then(res => {
+                //console.log(res.entries);
+                return res.entries;
+            });
+    }
+
 }
 
 export default Fetch = new Fetch();

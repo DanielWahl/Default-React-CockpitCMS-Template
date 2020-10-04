@@ -6,14 +6,14 @@ import Vars from '../helpers/Vars';
  * Slider needs to be activated in Vars.js, so an Api-call will be fetched.
  */
 
-const Carousel= (props) => {
+const Carousel= (props:any) => {
 	let slides = props.slides;
 
 	return (
 		<div className="flexslider">
 			<AwesomeSlider>
 				{
-					slides.map((slide, index) => {
+					slides.map((slide:any, index:number) => {
 						console.log(slide);
 						return (
 							<div key={`slide-${index}`}>

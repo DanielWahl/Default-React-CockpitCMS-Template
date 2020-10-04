@@ -2,8 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82872515-1958-4f25-8018-1e2ecda67819" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/component/ComponentSettings.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/component/ContentComponentData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/component/ContentData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/page/FieldData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/page/PageData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/page/PageEntry.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/page/PageProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/singleComponents/ArticleData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/singleComponents/CarouselData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/singleComponents/NormalProps.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Article.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Collection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentColumn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Divider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Divider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FlexBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FlexBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Heading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Maps.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PageBanner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageBanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Text.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/Fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/Fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/Vars.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/Vars.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,18 +63,25 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/types/page" />
+      <recent name="$PROJECT_DIR$/src/types/component" />
+      <recent name="$PROJECT_DIR$/src/types/singleComponents" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/style" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
-  <component name="TYPO3Settings" version="201.5.4" />
+  <component name="TYPO3Settings" version="202.5.5" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="82872515-1958-4f25-8018-1e2ecda67819" name="Default Changelist" comment="" />
@@ -63,28 +102,44 @@
       <workItem from="1593981672325" duration="170000" />
       <workItem from="1599033963572" duration="3929000" />
       <workItem from="1599814290615" duration="2315000" />
-      <workItem from="1599826847873" duration="6305000" />
+      <workItem from="1599826847873" duration="6383000" />
+      <workItem from="1600072427752" duration="38000" />
+      <workItem from="1600415762859" duration="3176000" />
+      <workItem from="1600768546889" duration="2710000" />
+      <workItem from="1601818264059" duration="1891000" />
+      <workItem from="1601822310346" duration="824000" />
+      <workItem from="1601823210689" duration="317000" />
+      <workItem from="1601823538103" duration="2380000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600027227646">
+    <state x="1026" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600417123414">
+      <screen x="602" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="1026" y="-878" key="#com.intellij.execution.impl.EditConfigurationsDialog/602.-1057.1920.1057/0.0.1680.996@602.-1057.1920.1057" timestamp="1600417123414" />
+    <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601822679682">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1600027227646" />
+    <state x="571" y="334" key="#com.intellij.fileTypes.FileTypeChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1601822679682" />
     <state x="365" y="98" key="CommitChangelistDialog2" timestamp="1600023043812">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="365" y="98" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600023043812" />
-    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1593071322311">
+    <state x="538" y="280" width="604" height="490" key="find.popup" timestamp="1601825463383">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593071322311" />
+    <state x="538" y="280" width="604" height="490" key="find.popup/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1601825463383" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1601823988906">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1601823988906" />
   </component>
 </project>

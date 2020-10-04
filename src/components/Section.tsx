@@ -12,7 +12,10 @@ import News from './News';
 import PopupBox from './PopupBox';
 import Maps from './Maps';
 
-const defaultComponents = {
+import ContentComponentData from "../types/component/ContentComponentData";
+import NormalProps from "../types/singleComponents/NormalProps";
+
+const defaultComponents:any = {
 	heading: Heading,
 	text: Text,
 	image: Image,
@@ -27,13 +30,13 @@ const defaultComponents = {
 	maps: Maps,
 }
 
-const Section = (props) => {
+const Section = (props:NormalProps) => {
 	let {children, data} = props;
 
 	return (
 		<section className={`page-components`}>
 			{children
-			&& children.map((component, j) => {
+			&& children.map((component:ContentComponentData, j:number) => {
 				const comp_name 	= component.component;
 				const comp_settings = component.settings;
 				const comp_children = component.children || [];
